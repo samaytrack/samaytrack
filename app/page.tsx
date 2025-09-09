@@ -1,103 +1,88 @@
-import Image from "next/image";
+// app/page.tsx
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <main
+      style={{
+        fontFamily: "system-ui, sans-serif",
+        padding: 48,
+        maxWidth: 900,
+        margin: "0 auto",
+      }}
+    >
+      <h1 style={{ fontSize: 42, marginBottom: 8 }}>Samaytrack</h1>
+      <p style={{ fontSize: 18, color: "#374151", marginBottom: 24 }}>
+        Simple, fast tracking for projects, tasks and time — built to help
+        freelancers and small teams take control of work.
+      </p>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      <section
+        style={{
+          display: "grid",
+          gap: 12,
+          gridTemplateColumns: "1fr 1fr",
+          marginBottom: 28,
+        }}
+      >
+        <div
+          style={{
+            padding: 18,
+            borderRadius: 10,
+            border: "1px solid #e6e6e6",
+          }}
+        >
+          <h3 style={{ margin: 0 }}>Track projects</h3>
+          <p style={{ marginTop: 8, color: "#6b7280" }}>
+            Create projects, add tasks, and see progress at a glance.
+          </p>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+
+        <div
+          style={{
+            padding: 18,
+            borderRadius: 10,
+            border: "1px solid #e6e6e6",
+          }}
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+          <h3 style={{ margin: 0 }}>Time & Reports</h3>
+          <p style={{ marginTop: 8, color: "#6b7280" }}>
+            Record time, generate simple reports, export CSV.
+          </p>
+        </div>
+      </section>
+
+      <div style={{ display: "flex", gap: 12 }}>
+        <Link
+          href="/signup"
+          style={{
+            padding: "12px 18px",
+            borderRadius: 8,
+            background: "#111827",
+            color: "white",
+            textDecoration: "none",
+          }}
         >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+          Get started — Free
+        </Link>
+
+        <Link
+          href="/dashboard"
+          style={{
+            padding: "12px 18px",
+            borderRadius: 8,
+            border: "1px solid #111827",
+            color: "#111827",
+            textDecoration: "none",
+          }}
         >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+          View demo dashboard
+        </Link>
+      </div>
+
+      <footer style={{ marginTop: 40, color: "#9ca3af" }}>
+        <small>Built with ♥ — Samaytrack</small>
       </footer>
-    </div>
+    </main>
   );
 }
